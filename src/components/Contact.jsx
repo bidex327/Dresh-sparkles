@@ -53,7 +53,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 px-6 bg-white text-center">
-      <ToastContainer position="top" autoClose={1000} />
+      <ToastContainer position="top-right" autoClose={2000} />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
