@@ -6,13 +6,13 @@ import Services from "../components/Services";
 
 import Promotion from "../components/Promtion";
 
-import About from "../components/About";
+import Pricing from "../components/Pricing";
 
 import Contact from "../components/Contact";
 
-import Booking from "../components/Booking";
 
-import Location from "../components/Location";
+
+
 
 import WhatsAppButton from "../components/WhatsAppButton";
 
@@ -24,10 +24,9 @@ const Home = () => {
       <Hero/>
       <Services/>
       <Promotion/>
-      <About/>
+      <Pricing/>
       <Contact/>
-      <Booking/>
-      <Location/>
+  
       <WhatsAppButton/>
       <Footer/>
     </>

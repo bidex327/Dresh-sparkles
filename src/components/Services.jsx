@@ -1,40 +1,53 @@
-import { motion } from "framer-motion";
+import { FaTshirt, FaSprayCan, FaBroom, FaBed, FaClock, FaTruck } from "react-icons/fa";
 
-const services = [
-    "Lavage & Repassage",
-    "Nettoyage à Sec",
-    "Enlévment des Taches",
-    "Couettes & Rideaux",
-    "service Rapide",
-    "Ramassage & Livraison Gratuits",
-];
+const Services = () => {
+  return (
+    <div className="py-24 bg-white  min-h-screen" id="services">
+      {/* Section Title */}
+      <div className="text-center mb-16">
+        <h3 className="text-4xl font-bold text-black">Nos Services Premium</h3>
+      </div>
 
-const Services =  () => {
-    return (
-        <section id="services" className="py-24 bg-blue-100">
-        <h3 className="text-center text-4xl font-bold text-black mb-16"> Nos Services Premium</h3>
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 " >
-            {services.map((service, index) => (
-                <motion.div
-                key={index}
-                whileHover={{ scale: 1.05}}
-                initial={{ opacity: 0, y: 50}}
-                whileInView={{ opacity: 1, y: 0}}
-                transition={{ duration: 0.6}}
-                className="hover:bg-green-300 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-white/20 text-center ">
-                <p className="text-lg font-semibold text-black">
-                    {service}
-                </p>
-
-                </motion.div>
-            ))}
+      {/* Services Grid */}
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 auto-rows-fr">
+        {/* Service Box 1 */}
+        <div className="p-10 rounded-2xl bg-white shadow-lg border shadow-black border-white/20 text-center transform transition duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col justify-center">
+          <FaTshirt className="mx-auto mb-4 text-5xl text-orange-300" />
+          <p className="text-xl font-semibold text-black">Lavage & Repassage</p>
         </div>
 
+        {/* Service Box 2 */}
+        <div className="p-10 rounded-2xl bg-white shadow-lg shadow-black border border-white/20 text-center transform transition duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col justify-center">
+          <FaSprayCan className="mx-auto mb-4 text-5xl text-orange-300" />
+          <p className="text-xl font-semibold text-black">Nettoyage à Sec</p>
+        </div>
 
+        {/* Service Box 3 */}
+        <div className="p-10 rounded-2xl bg-white shadow-lg shadow-black  border border-white/20 text-center transform transition duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col justify-center">
+          <FaBroom className="mx-auto mb-4 text-5xl text-orange-300" />
+          <p className="text-xl font-semibold text-black">Enlèvement des Taches</p>
+        </div>
 
-        </section>
-    )
-}
+        {/* Service Box 4 */}
+        <div className="p-10 rounded-2xl bg-white shadow-lg shadow-black  border border-white/20 text-center transform transition duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col justify-center">
+          <FaBed className="mx-auto mb-4 text-5xl text-orange-300" />
+          <p className="text-xl font-semibold text-black">Couettes & Rideaux</p>
+        </div>
+
+        {/* Service Box 5 */}
+        <div className="p-10 rounded-2xl bg-white shadow-lg shadow-black  border border-white/20 text-center transform transition duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col justify-center">
+          <FaClock className="mx-auto mb-4 text-5xl text-orange-300" />
+          <p className="text-xl font-semibold text-black">Service Rapide</p>
+        </div>
+
+        {/* Service Box 6 */}
+        <div className="p-10 rounded-2xl bg-white shadow-lg shadow-black  border border-white/20 text-center transform transition duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col justify-center">
+          <FaTruck className="mx-auto mb-4 text-5xl text-orange-300" />
+          <p className="text-xl font-semibold text-black">Ramassage & Livraison Gratuits</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Services;
-

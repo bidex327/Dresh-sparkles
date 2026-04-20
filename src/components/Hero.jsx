@@ -1,29 +1,70 @@
 import { motion } from "framer-motion";
-import bg from "../assets/laundry-bg.JPG"
+import { Link } from "react-scroll";
+import bg from "../assets/laundry-bg.JPG";
 
 const Hero = () => {
-    return (
-        <section className="h-screen bg-center bg-cover bg-no-repeat flex items-center justify-center relative"
-        style={{ backgroundImage: `url(${bg})`}}>
-        <div className="absolute inset-0 "></div>
-        <motion.div
-        initial={{ opacity: 0, y: 60}}
-        animate={{ opacity:1, y: 0}}
-        transition={{ duration: 1}}
-        className="relative z-10 bg-white/10 backdrop-blur-lg p-12 md:p-12 rounded-2xl text-center text-black max-w-3xl shadow-2xl border border-white">
-        <h2 className="text-5xl font-extrabold mb-6"> L’Excellence du Soin Textile à Cotonou</h2>
-        <p className="text-xl mb-4"> Grande Ouverture – 25 Février 2026</p>
-        <p className="text-3xl text-gold font-extrabold m-6"> 50% de Réduction</p>
-        <button className="bg-gold text-luxuryGreen px-8 py-3 rounded-full font-extrabold hover:scale-105 transition"> Réserver Maintenant</button>
+  const containerVariants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.3 } },
+  };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  return (
+    <section
+      className="relative min-h-screen w-full bg-center bg-cover bg-no-repeat flex items-center justify-start overflow-hidden px-4 sm:px-8 md:px-20 py-32 md:py-40"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Content */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="relative z-10 w-full max-w-3xl p-6 sm:p-8 md:p-12 rounded-2xl text-left text-white"
+      >
+        <motion.h2
+          variants={itemVariants}
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6"
+        >
+          DRESH SPARKLES
+        </motion.h2>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+        >
+          L'Excellence du Soin Textile à Cotonou
+        </motion.p>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-lg sm:text-xl mb-6 "
+        >
+          Chez DRESH Sparkles, nous redéfinissons le service de blanchisserie à Cotonou.
+          Nous offrons un service moderne, rapide et professionnel avec ramassage et livraison 100% gratuits.
+          Votre linge mérite un traitement d’exception.
+        </motion.p>
+
+        <motion.div variants={itemVariants} className="w-full">
+          <Link to="contact" smooth={true} duration={500}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto bg-white text-black px-6 sm:px-8 py-3 rounded-full font-extrabold transition"
+            >
+              Réserver Maintenant
+            </motion.button>
+          </Link>
         </motion.div>
-
-        </section>
-    );
+      </motion.div>
+    </section>
+  );
 };
+
 export default Hero;
-
-
-
-
-
